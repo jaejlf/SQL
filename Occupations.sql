@@ -5,4 +5,4 @@ SELECT
     MAX(CASE WHEN Occupation = 'Actor' THEN NAME END) AS 'Actor'
 FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY Occupation ORDER BY NAME) RN
       FROM Occupations) TEMP
-GROUP BY RN
+GROUP BY RN;
